@@ -1,0 +1,27 @@
+{% from "macros.html" import listGroup, itemGroup %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}
+    {% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/item.css') }}">
+</head>
+<body>
+
+    {% block header_title %}
+        <h1>豆瓣小程序评分</h1>
+    {% endblock %}
+
+    <div class="container">
+        <div class="search-group">
+            <input type="text" class="search-input">
+        </div>
+        {% block content %}
+
+        {% endblock %}
+
+    </div>
+</body>
+</html>

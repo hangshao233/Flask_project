@@ -1,0 +1,40 @@
+ <!--定义宏-->
+{% macro itemGroup(thumbnail, title, rating) %}
+    <div class="item-group">
+            <img src="{{ thumbnail }}" alt="" class="thumbnail">
+            <p class="item-title">{{ title }}</p>
+            <p class="item-rating">
+                {% set lights = ((rating|int)/2)|int %}
+                {% set halfsb = (rating|int)%2 %}
+                {% set grays = 5 - lights - halfsb %}
+                {% for light in range(0, lights) %}
+                <img src="{{ url_for('static', filename='images/rate_light.png') }}" alt="">
+                {% endfor %}
+
+                {% for half in range(0, halfsb) %}
+                <img src="{{ url_for('static', filename='images/rate_half.jpg') }}" alt="">
+                {% endfor %}
+                {% for gray in range(0, grays) %}
+                <img src="{{ url_for('static', filename='images/rate_gray.png') }}" alt="">
+                {% endfor %}
+                {{ rating }}
+
+            </p>
+        </div>
+{% endmacro %}
+
+{% macro listGroup(module_title, items, category=category) %}
+    <div class="item-list-group">
+        <div class="item-list-top">
+            <span class="module-title">{{ module_title }}</span>
+            <!--以？的形式传参-->
+            <a href="{{ url_for('movie_list', category=category) }}" class="more-btn">更多</a>
+        </div>
+        <div class="list-group">
+            <!--宏的调用-->
+            {% for item in items[0:3] %}
+                {{ itemGroup(item.thumbnail, item.title, item.rating) }}
+            {% endfor %}
+        </div>
+    </div>
+{% endmacro %}

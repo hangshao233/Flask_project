@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+    <title>{% block title %}
+    {% endblock %}</title>
+</head>
+<body>
+<p>这是我自己定义的P标签</p>
+    {% block header %}
+        <ul>
+            <li>首页</li>
+            <li>课程详情</li>
+            <li>视频教程</li>
+            <li>关于我们</li>
+        </ul>
+    {% endblock %}
+
+    {% block content %}
+        <h1>这是首页</h1>
+    {% endblock %}
+
+    {% block footer %}
+    <div class="footer">
+        这是网站底部
+    </div>
+    <!--可以嵌套 但是不能重名-->
+    {% block foo %}
+        友情链接
+    {% endblock %}
+    {% endblock %}
+
+
+</body>
+</html>

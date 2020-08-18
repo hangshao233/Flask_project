@@ -1,0 +1,14 @@
+{% import "macro.html" as macro %}
+{% from "macro.html" import input %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <P>宏的导入</P>
+    {{ macro.input("username") }}
+    {{ input("password", type="password") }}
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--if判断-->
+{% if username == "hangshao" %}
+    <p>{{ username }}在此</p>
+{% else %}
+    <P>当前的用户不是航少...</P>
+{% endif %}
+<hr>
+
+<!--for循环列表-->
+{% for book in books %}
+    <P>{{ loop.index }}</P>     <!--下标-->
+    <P>{{ book }}</P>
+{% endfor %}
+<hr>
+
+<!--for循环字典-->
+{% for key,value in user.items() %}
+    <P>{{ key }}:{{ value }}</P>
+{% endfor %}
+</body>
+</html>

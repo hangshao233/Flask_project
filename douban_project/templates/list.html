@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+</head>
+<body>
+    <ul>
+        <li>首页</li>
+        <li>课程详情</li>
+        <li>视频教程</li>
+        <li>关于我们</li>
+    </ul>
+
+    <h1>这是列表页面</h1>
+    <img src="{{ url_for('static', filename='images/demo.jpg') }}" alt="">
+
+    <div class="footer">
+        这是网站底部
+    </div>
+</body>
+</html>

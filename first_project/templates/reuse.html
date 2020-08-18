@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--全局变量-->
+{% set name="hangshao" %}
+
+<!--导入头部代码-->
+{% include 'templates_reuse/header.html' %}
+    <p>这是页面内容</p>
+    <p>这是使用set在模板中定义的全局变量name:{{ name }}</p>
+
+<!--局部变量-->
+{% with name = "这是一个局部变量" %}
+    {{ name }}
+{% endwith %}
+
+<!--导入尾部代码-->
+{% include 'templates_reuse/footer.html' %}
+</body>
+</html>

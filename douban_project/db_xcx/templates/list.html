@@ -1,0 +1,20 @@
+
+
+{% extends "base.html" %}
+
+{% block title %}
+    电影
+{% endblock %}
+
+{% block header_title %}
+    <h1>电影</h1>
+{% endblock %}
+
+
+{% block content %}
+    <!-- 是视图传过来的数据 -->
+    {% for item in items %}
+        {{ itemGroup(item.thumbnail, item.title, item.rating) }}
+    {% endfor %}
+{% endblock %}
+

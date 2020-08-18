@@ -1,0 +1,35 @@
+<!-- 模板继承放到block代码块的上面 -->
+{% extends 'base.html' %}
+
+
+<!-- 不能多继承 -->
+{# {% extends 'base1.html' %} #}
+
+
+{% block title %}
+    首页
+{% endblock %}
+
+<!-- 重写父模板中的block -->
+{% block content %}
+<img src="{{ url_for('static', filename='images/demo.jpg') }}" alt="">
+    <!-- 调用父模板中的block -->
+    {{ super() }}
+    这是子模板的首页
+    <p>逻辑教育</p>
+{% endblock %}
+
+
+{% block foo %}
+    foo
+{% endblock %}
+
+
+<!-- 自己定义的block 不能显示 -->
+{% block demo %}
+    <p>这是我自己定义的P标签</p>
+{% endblock %}
+<!-- 自己写标签 -->
+<p>这是我自己定义的P标签</p>
+
+

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>首页</h1>
+    <h2>{{ username }}</h2>
+    <h2>{{ age|abs }}</h2>
+    <h2>{{ name|default("这个人很懒,没有留下任何信息") }}</h2>
+    <!-- 自动转义 -->
+    <!-- 关闭转义的两种方式 -->
+{#    <h2>{{ es|safe }}</h2>#}
+{#    {% autoescape off %}#}
+{#        <h2>{{ es }}</h2>#}
+{#    {% endautoescape %}#}
+    <p>{{ books|first }}</p>
+    <p>{{ books|length }}</p>
+    <p>{{ books|first|length }}</p>
+{#    <p>{{ username|lower }}</p>#}
+{#    <p>{{ username|upper }}</p>#}
+{#    <p>{{ username|replace("old_value","new_value") }}</p>#}
+    <!--截取指定长度字符串-->
+    <p>{{ username|truncate(length=5) }}</p>
+    <!--删除HTML标签-->
+    <p>{{ es|striptags }}</p>
+
+    <!--trim        去前后空格-->
+    <!--string      将变量转为字符串-->
+    <!--wordcount   计算字符串中单词的数量-->
+    <p>文章发布时间：{{ now_time|handle_time }}</p>
+</body>
+</html>

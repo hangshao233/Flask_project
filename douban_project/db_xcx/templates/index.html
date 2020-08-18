@@ -1,0 +1,18 @@
+
+{% extends "base.html" %}
+
+{% block title %}
+    首页
+{% endblock %}
+
+{% block header_title %}
+    <h1>豆瓣小程序评分</h1>
+{% endblock %}
+
+
+{% block content %}
+    {{ listGroup('电影', movies, 1) }}
+    <hr>
+    {{ listGroup('电视剧', tvs, 2) }}
+{% endblock %}
+
